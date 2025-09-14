@@ -63,14 +63,39 @@ Key features include:
 
 ## 📂 Folder Structure
 cyber-threat-dashboard/
-│── data/ # Dataset CSVs (train/test)
-│── models/ # Saved ML models & encoders (.pkl)
-│── notebook/ # Google Colab training notebooks
-│── dashboard.py # Streamlit app
-│── sample_logs.csv # Example input CSV
-│── README.md # Project documentation
-|-- requirements.txt
+│── README.md                  # Project documentation
+│── requirements.txt            # Python dependencies
+│── dashboard.py                # Streamlit dashboard app
+│── sample_logs.csv             # Example CSV for testing
 
+├── data/                       # Datasets
+│   ├── UNSW_NB15_training-set.csv
+│   ├── UNSW_NB15_testing-set.csv
+│   └── sample_raw.csv          # Hackathon-friendly sample input
+
+├── models/                     # Trained ML models & encoders
+│   ├── rf_model.pkl            # Random Forest (binary classification)
+│   ├── scaler_rf.pkl           # Scaler for RF
+│   ├── xgb_model.pkl           # XGBoost (multi-class classification)
+│   ├── scaler_mc.pkl           # Scaler for XGB
+│   ├── attack_encoder.pkl      # Encoder for attack categories
+│   ├── proto_encoder.pkl       # Encoder for proto
+│   ├── service_encoder.pkl     # Encoder for service
+│   └── state_encoder.pkl       # Encoder for state
+
+├── notebook/                   # Jupyter/Colab notebooks
+│   ├── training_rf.ipynb       # Random Forest training pipeline
+│   ├── training_xgb.ipynb      # XGBoost training pipeline
+│   └── preprocessing.ipynb     # Data preprocessing & encoding
+
+├── results/                    # Model outputs & evaluation
+│   ├── rf_metrics.txt          # Accuracy, precision, recall, confusion matrix (RF)
+│   ├── xgb_metrics.txt         # Same for XGBoost
+│   └── visualizations/         # Any saved plots (confusion matrices, charts, etc.)
+
+└── docs/                       # Supporting material (optional)
+    ├── project_pitch.pdf        # Hackathon PPT/Pitch
+    └── architecture.png         # System pipeline diagram
 ---
 
 ## 🎮 How to Run
